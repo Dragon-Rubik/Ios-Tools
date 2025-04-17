@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>iOS 12 – iOS 12.5.7 Utils</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       background-color: #111;
@@ -17,8 +18,8 @@
       font-size: 2rem;
     }
     .section {
-      margin: 3rem auto;
-      padding: 1.5rem;
+      margin: 2rem auto;
+      padding: 1.2rem;
       border: 1px solid #444;
       border-radius: 10px;
       background-color: #1c1c1c;
@@ -26,6 +27,7 @@
     }
     .section h2 {
       color: #00f7ff;
+      font-size: 1.3rem;
     }
     .section p {
       font-size: 0.95rem;
@@ -34,15 +36,36 @@
     a.button {
       display: inline-block;
       margin-top: 1rem;
-      padding: 0.7rem 1.5rem;
+      padding: 0.6rem 1.2rem;
       background-color: #0f0;
       color: #000;
       text-decoration: none;
       font-weight: bold;
       border-radius: 8px;
+      transition: background-color 0.2s;
     }
     a.button:hover {
       background-color: #0c0;
+    }
+
+    /* Responsive for iPhone/small screens */
+    @media (max-width: 480px) {
+      body {
+        padding: 1rem;
+      }
+      .section {
+        padding: 1rem;
+      }
+      h1 {
+        font-size: 1.3rem;
+      }
+      .section h2 {
+        font-size: 1.1rem;
+      }
+      a.button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
@@ -52,29 +75,46 @@
   <p>Tools and tweaks to keep your old iPhone alive 🔋</p>
 
   <div class="section">
-    <h2>📺 YouTube Classic WebClip</h2>
-    <p>Install a simple YouTube WebClip icon. No updates required.  
-    <br><strong>By:</strong> Zzarkez Dev  
-    <br><em>YouTube Without Update Errors For iOS 12.5.7</em></p>
-    <a class="button" href="youtube.mobileconfig">Download WebClip</a>
-  </div>
-
-  <div class="section">
     <h2>🧪 YouTube Eternal</h2>
-    <p>Mobile configuration profile with extended support and settings for the YouTube app.</p>
-    <a class="button" href="https://github.com/Dragon-Rubik/Jailbreak-12.5.7/raw/main/YouTube-Eternal.mobileconfig">
-      Download YouTube Eternal
-    </a>
+    <p>Fixed YouTube for iOS 12 update issues.</p>
+    <a class="button" id="yt-download">Download YouTube Eternal</a>
   </div>
 
   <div class="section">
     <h2>⚡ Chimera Jailbreak</h2>
-    <p>Install Chimera Jailbreak directly from this page using the plist method.  
-    <br>Fully compatible with iOS 12 – iOS 12.5.7.</p>
-    <a class="button" href="itms-services://?action=download-manifest&url=https://github.com/Dragon-Rubik/Jailbreak-12.5.7/releases/download/jailbrea/chimera.plist">
-      Install Chimera Jailbreak
-    </a>
+    <p>Install Chimera Jailbreak using the plist method. Fully compatible with iOS 12 – 12.5.7.</p>
+    <a class="button" id="chimera-download">Install Chimera Jailbreak</a>
   </div>
+
+  <script>
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+    document.getElementById("yt-download").addEventListener("click", function () {
+      if (isIOS) {
+        // iOS: abre directamente el perfil
+        window.location.href = "https://github.com/Dragon-Rubik/Jailbreak-12.5.7/raw/main/YouTube-Eternal.mobileconfig";
+      } else {
+        // PC: descarga el archivo
+        const link = document.createElement("a");
+        link.href = "https://github.com/Dragon-Rubik/Jailbreak-12.5.7/raw/main/YouTube-Eternal.mobileconfig";
+        link.download = "YouTube-Eternal.mobileconfig";
+        link.click();
+      }
+    });
+
+    document.getElementById("chimera-download").addEventListener("click", function () {
+      if (isIOS) {
+        // iOS: itms-services para instalar
+        window.location.href = "itms-services://?action=download-manifest&url=https://github.com/Dragon-Rubik/Jailbreak-12.5.7/releases/download/jailbrea/chimera.plist";
+      } else {
+        // PC: descarga el IPA
+        const link = document.createElement("a");
+        link.href = "https://github.com/Dragon-Rubik/Jailbreak-12.5.7/releases/download/jailbrea/chimera.ipa";
+        link.download = "chimera.ipa";
+        link.click();
+      }
+    });
+  </script>
 
 </body>
 </html>
