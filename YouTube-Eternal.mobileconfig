@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>PayloadContent</key>
+  <array>
+    <dict>
+      <key>FullScreen</key>
+      <true/>
+      <key>IconIsPrecomposed</key>
+      <true/>
+      <key>Label</key>
+      <string>YouTube</string>
+      <key>PayloadDescription</key>
+      <string>YouTube Without Update Errors For iOS 12.5.7</string>
+      <key>PayloadDisplayName</key>
+      <string>YouTube WebClip</string>
+      <key>PayloadIdentifier</key>
+      <string>com.zzarkez.webclip.youtube</string>
+      <key>PayloadOrganization</key>
+      <string>Zzarkez Dev</string>
+      <key>PayloadType</key>
+      <string>com.apple.webClip.managed</string>
+      <key>PayloadUUID</key>
+      <string>5F54A8D1-0A5F-4C78-ADDF-000000000001</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>URL</key>
+      <string>https://youtube.com/</string>
+    </dict>
+  </array>
+  <key>PayloadDisplayName</key>
+  <string>YouTube WebClip</string>
+  <key>PayloadIdentifier</key>
+  <string>com.zzarkez.mobileconfig.youtube</string>
+  <key>PayloadOrganization</key>
+  <string>Zzarkez Dev</string>
+  <key>PayloadRemovalDisallowed</key>
+  <false/>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadUUID</key>
+  <string>1F3C6E27-7E57-4DA5-9955-000000000002</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+</dict>
+</plist>
