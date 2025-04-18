@@ -2,53 +2,40 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>ConsentText</key>
-	<dict>
-		<key>default</key>
-		<string>Instalador de Youtube para iOS 12</string>
-	</dict>
-	<key>PayloadContent</key>
-	<array>
-		<dict>
-			<key>FullScreen</key>
-			<true/>
-			<key>Icon</key>
-			<data>
-/9j/4AAQSkZJRgABAQAASABIAAD/4QF0RXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAADZADAAIAAAAUAAAAvJAEAAIAAAAUAAAA0JAQAAIAAAAHAAAA5JARAAIAAAAHAAAA7JASAAIAAAAHAAAA9JJ8AAcAAAA+AAAA/JKGAAcAAAAyAAABOpKQAAIAAAAEMjI5AJKRAAIAAAAEMjI5AJKSAAIAAAAEMjI5AKABAAMAAAABAAEAAKACAAQAAAABAAAA5qADAAQAAAABAAAA5gAAAAAyMDIyOjA0OjAyIDAxOjAyOjAxADIwMjI6MDQ6MDIgMDE6MDI6MDEALTA0OjAwAAAtMDQ6MDAAAC0wNDowMAAAQXBwbGUgaU9TAAABTU0AAQAWAAIAAAAdAAAAIAAAAABBYmIyMEZkTHM3Y3dVZ2t3Mm5JeEtyNmMxV0xJAABBU0NJSQAAADEuMjEtMjJELVpVQTRWMkxONlY3TE1ZMkhWWUEzNUtYM0ZFLjAuMi0wAP/tADhQaG90b3Nob3AgMy4wADhCSU0EBAAAAAAAADhCSU0EJQAAAAAAENQdjNmPALIE6YAJmOz4Qn7/... (se mantiene igual)
-			</data>
-			<key>PayloadIdentifier</key>
-			<string>com.juanes.youtube12</string>
-			<key>PayloadOrganization</key>
-			<string>Juanes Inc.</string>
-			<key>PayloadType</key>
-			<string>com.apple.webClip.managed</string>
-			<key>PayloadUUID</key>
-			<string>F9F5B3C8-8B8F-4E8F-84D2-F7D7A5E8ABCD</string>
-			<key>PayloadVersion</key>
-			<integer>1</integer>
-			<key>Label</key>
-			<string>YouTube iOS 12</string>
-			<key>URL</key>
-			<string>https://www.youtube.com</string>
-			<key>IsRemovable</key>
-			<true/>
-			<key>Precomposed</key>
-			<true/>
-		</dict>
-	</array>
-	<key>PayloadDisplayName</key>
-	<string>YouTube iOS 12</string>
-	<key>PayloadIdentifier</key>
-	<string>com.juanes.youtube12.config</string>
-	<key>PayloadOrganization</key>
-	<string>Juanes Inc.</string>
-	<key>PayloadRemovalDisallowed</key>
-	<false/>
-	<key>PayloadType</key>
-	<string>Configuration</string>
-	<key>PayloadUUID</key>
-	<string>5B849A12-B67C-4C63-B6A1-F42F8A6DABCD</string>
-	<key>PayloadVersion</key>
-	<integer>1</integer>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+
+    <key>PayloadIdentifier</key>
+    <string>com.montaos.youtubeconfig</string>
+
+    <key>PayloadUUID</key>
+    <string>12345678-ABCD-1234-ABCD-1234567890AB</string>
+
+    <key>PayloadDisplayName</key>
+    <string>Youtube iOS 12 Fix</string>
+
+    <key>PayloadOrganization</key>
+    <string>MontaOS</string>
+
+    <key>ConsentText</key>
+    <dict>
+        <key>default</key>
+        <string>Youtube For iOS 12 without update errors</string>
+    </dict>
+
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>FullScreen</key>
+            <true/>
+            <key>Icon</key>
+            <data>
+                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...
+            </data>
+        </dict>
+    </array>
 </dict>
 </plist>
