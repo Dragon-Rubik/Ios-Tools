@@ -23,7 +23,7 @@
 			<key>Label</key>
 			<string>YouTube</string>
 			<key>PayloadDescription</key>
-			<string>A WebClip I scrapped together so people can stop complaining about the YouTube app not loading on older iOS versions.</string>
+			<string>YouTube Without Update Errors For iOS 12.5.7</string>
 			<key>PayloadDisplayName</key>
 			<string>YouTube Forever</string>
 			<key>PayloadIdentifier</key>
@@ -43,13 +43,13 @@
 		</dict>
 	</array>
 	<key>PayloadDescription</key>
-	<string>A WebClip I scrapped together so people can stop complaining about the YouTube app not loading on older iOS versions.</string>
+	<string>YouTube Without Update Errors For iOS 12.5.7</string>
 	<key>PayloadDisplayName</key>
 	<string>YouTube Eternal</string>
 	<key>PayloadIdentifier</key>
 	<string>893C1B75-0289-4454-91CF-B5745EF2A559</string>
 	<key>PayloadOrganization</key>
-	<string>shadoez16</string>
+	<string>Zzarkez Dev</string>
 	<key>PayloadRemovalDisallowed</key>
 	<false/><!--never set to true with random/unknown uuids/identifiers-->
 	<key>PayloadType</key>
