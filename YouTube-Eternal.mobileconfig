@@ -37,7 +37,7 @@
 		</dict>
 	</array>
 	<key>PayloadDisplayName</key>
-	<string>YouTube iOS 12</string>
+	<string>YouTube</string>
 	<key>PayloadIdentifier</key>
 	<string>com.zzarkez.youtube12.config</string>
 	<key>PayloadOrganization</key>
