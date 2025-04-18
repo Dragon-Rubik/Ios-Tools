@@ -10,15 +10,15 @@
       <key>IconIsPrecomposed</key>
       <true/>
       <key>Label</key>
-      <string>Your App</string>
+      <string>YouTube</string>
       <key>PayloadDescription</key>
-      <string>App WebClip with logo</string>
+      <string>YouTube Without Update Errors For iOS 12.5.7</string>
       <key>PayloadDisplayName</key>
-      <string>App WebClip</string>
+      <string>YouTube WebClip</string>
       <key>PayloadIdentifier</key>
-      <string>com.example.webclip.app</string>
+      <string>com.zzarkez.webclip.youtube</string>
       <key>PayloadOrganization</key>
-      <string>Your Company</string>
+      <string>Zzarkez Dev</string>
       <key>PayloadType</key>
       <string>com.apple.webClip.managed</string>
       <key>PayloadUUID</key>
@@ -26,17 +26,15 @@
       <key>PayloadVersion</key>
       <integer>1</integer>
       <key>URL</key>
-      <string>https://github.com/Dragon-Rubik/Jailbreak-12.5.7/blob/main/logo.png</string>
-      <key>Icon</key>
-      <string>https://github.com/Dragon-Rubik/Jailbreak-12.5.7/blob/main/logo.png</string>
+      <string>https://youtube.com/</string>
     </dict>
   </array>
   <key>PayloadDisplayName</key>
-  <string>App WebClip</string>
+  <string>YouTube WebClip</string>
   <key>PayloadIdentifier</key>
-  <string>com.example.mobileconfig.app</string>
+  <string>com.zzarkez.mobileconfig.youtube</string>
   <key>PayloadOrganization</key>
-  <string>Your Company</string>
+  <string>Zzarkez Dev</string>
   <key>PayloadRemovalDisallowed</key>
   <false/>
   <key>PayloadType</key>
