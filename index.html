@@ -78,11 +78,13 @@
     <h2>YouTube Eternal</h2>
     <p>Fixed YouTube for old IOS versions</p>
     <a class="button" id="yt-download">Download YouTube Eternal</a>
+    <h3>Developed by Zzarkez Dev</h3>
   </div>
 
   <div class="section">
     <h2>Chimera Jailbreak</h2>
     <p>Install Chimera Jailbreak using the plist method. Fully compatible with iOS 12 – 12.5.7.</p>
+    <h3>Developed by Zzarkez Dev</h3>
     <a class="button" id="chimera-download">Install Chimera Jailbreak</a>
   </div>
 
@@ -92,11 +94,11 @@
     document.getElementById("yt-download").addEventListener("click", function () {
       if (isIOS) {
         // iOS: abre directamente el perfil
-        window.location.href = "https://github.com/Dragon-Rubik/Ios-Tools/blob/main/YouTube-Eternal.mobileconfig";
+        window.location.href = "https://github.com/ZzarkezDev/Ios-Tools/blob/main/YouTube-Eternal.mobileconfig";
       } else {
         // PC: descarga el archivo
         const link = document.createElement("a");
-        link.href = "https://github.com/Dragon-Rubik/Ios-Tools/blob/main/YouTube-Eternal.mobileconfig";
+        link.href = "https://github.com/ZzarkezDev/Ios-Tools/blob/main/YouTube-Eternal.mobileconfig";
         link.download = "YouTube-Eternal.mobileconfig";
         link.click();
       }
@@ -105,11 +107,11 @@
     document.getElementById("chimera-download").addEventListener("click", function () {
       if (isIOS) {
         // iOS: itms-services para instalar
-        window.location.href = "itms-services://?action=download-manifest&url=https://github.com/Dragon-Rubik/Ios-Tools/releases/download/jailbrea/chimera.plist";
+        window.location.href = "itms-services://?action=download-manifest&url=https://github.com/ZzarkezDev/Ios-Tools/releases/download/jailbrea/chimera.plist";
       } else {
         // PC: descarga el IPA
         const link = document.createElement("a");
-        link.href = "https://github.com/Dragon-Rubik/Ios-Tools/releases/download/jailbrea/chimera.ipa";
+        link.href = "https://github.com/ZzarkezDev/Ios-Tools/releases/download/jailbrea/chimera.ipa";
         link.download = "chimera.ipa";
         link.click();
       }
