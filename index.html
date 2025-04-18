@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>iOS 12 – iOS 12.5.7 Utils</title>
+  <title>iOS Tools</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
-      background-color: #111;
+      background-color: #1b1b1b;
       color: #fff;
       font-family: sans-serif;
       padding: 2rem;
       text-align: center;
     }
     h1 {
-      color: #00ffff;
+      color: #ffffff;
       font-size: 2rem;
     }
     .section {
@@ -26,18 +26,18 @@
       max-width: 500px;
     }
     .section h2 {
-      color: #00f7ff;
+      color: #ffffff;
       font-size: 1.3rem;
     }
     .section p {
       font-size: 0.95rem;
-      color: #ccc;
+      color: #39be70;
     }
     a.button {
       display: inline-block;
       margin-top: 1rem;
       padding: 0.6rem 1.2rem;
-      background-color: #0f0;
+      background-color: rgb(41, 67, 219);
       color: #000;
       text-decoration: none;
       font-weight: bold;
@@ -45,7 +45,7 @@
       transition: background-color 0.2s;
     }
     a.button:hover {
-      background-color: #0c0;
+      background-color: rgb(41, 67, 219);
     }
 
     /* Responsive for iPhone/small screens */
@@ -71,17 +71,17 @@
 </head>
 <body>
 
-  <h1>iOS 12 – iOS 12.5.7 Utils</h1>
-  <p>Tools and tweaks to keep your old iPhone alive 🔋</p>
+  <h1>iOS Tools</h1>
+  <p>Tools and tweaks to keep your old iPhone alive</p>
 
   <div class="section">
-    <h2>🧪 YouTube Eternal</h2>
-    <p>Fixed YouTube for iOS 12 update issues.</p>
+    <h2>YouTube Eternal</h2>
+    <p>Fixed YouTube for old IOS versions</p>
     <a class="button" id="yt-download">Download YouTube Eternal</a>
   </div>
 
   <div class="section">
-    <h2>⚡ Chimera Jailbreak</h2>
+    <h2>Chimera Jailbreak</h2>
     <p>Install Chimera Jailbreak using the plist method. Fully compatible with iOS 12 – 12.5.7.</p>
     <a class="button" id="chimera-download">Install Chimera Jailbreak</a>
   </div>
@@ -92,11 +92,11 @@
     document.getElementById("yt-download").addEventListener("click", function () {
       if (isIOS) {
         // iOS: abre directamente el perfil
-        window.location.href = "https://github.com/Dragon-Rubik/Jailbreak-12.5.7/raw/main/YouTube-Eternal.mobileconfig";
+        window.location.href = "https://github.com/Dragon-Rubik/Ios-Tools/blob/main/YouTube-Eternal.mobileconfig";
       } else {
         // PC: descarga el archivo
         const link = document.createElement("a");
-        link.href = "https://github.com/Dragon-Rubik/Jailbreak-12.5.7/raw/main/YouTube-Eternal.mobileconfig";
+        link.href = "https://github.com/Dragon-Rubik/Ios-Tools/blob/main/YouTube-Eternal.mobileconfig";
         link.download = "YouTube-Eternal.mobileconfig";
         link.click();
       }
@@ -105,11 +105,11 @@
     document.getElementById("chimera-download").addEventListener("click", function () {
       if (isIOS) {
         // iOS: itms-services para instalar
-        window.location.href = "itms-services://?action=download-manifest&url=https://github.com/Dragon-Rubik/Jailbreak-12.5.7/releases/download/jailbrea/chimera.plist";
+        window.location.href = "itms-services://?action=download-manifest&url=https://github.com/Dragon-Rubik/Ios-Tools/releases/download/jailbrea/chimera.plist";
       } else {
         // PC: descarga el IPA
         const link = document.createElement("a");
-        link.href = "https://github.com/Dragon-Rubik/Jailbreak-12.5.7/releases/download/jailbrea/chimera.ipa";
+        link.href = "https://github.com/Dragon-Rubik/Ios-Tools/releases/download/jailbrea/chimera.ipa";
         link.download = "chimera.ipa";
         link.click();
       }
