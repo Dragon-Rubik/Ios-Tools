@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>iOS Tools</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <style>
     body {
       background-color: #1b1b1b;
@@ -13,10 +12,31 @@
       padding: 2rem;
       text-align: center;
     }
+
+    #search-bar {
+      width: 100%;
+      max-width: 500px;
+      padding: 0.6rem 1rem;
+      margin: 0 auto 1.5rem auto;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      background-color: #2c2c2c;
+      color: #fff;
+      outline: none;
+      box-shadow: 0 0 5px #00000088;
+      display: block;
+    }
+
+    #search-bar::placeholder {
+      color: #aaa;
+    }
+
     h1 {
       color: #ffffff;
       font-size: 2rem;
     }
+
     .section {
       margin: 2rem auto;
       padding: 1.2rem;
@@ -24,16 +44,20 @@
       border-radius: 10px;
       background-color: #1c1c1c;
       max-width: 500px;
+      position: relative;
     }
+
     .section h2 {
       color: #ffffff;
       font-size: 1.3rem;
     }
+
     .section p {
       font-size: 0.95rem;
       color: #39be70;
     }
-    a.button {
+
+    a.button, button.confirm-button {
       display: inline-block;
       margin-top: 1rem;
       padding: 0.6rem 1.2rem;
@@ -43,25 +67,66 @@
       font-weight: bold;
       border-radius: 8px;
       transition: background-color 0.2s;
+      border: none;
+      cursor: pointer;
     }
-    a.button:hover {
+
+    a.button:hover, button.confirm-button:hover {
       background-color: rgb(41, 67, 219);
     }
 
-    /* Responsive for iPhone/small screens */
+    .install-box {
+      background-color: #2a2a2a;
+      border: 1px solid #555;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-top: 1rem;
+      display: none;
+      color: #fff;
+    }
+
+    .install-box p {
+      color: #ccc;
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .version {
+      color: #ff4c4c;
+      font-weight: bold;
+    }
+
+    .cancel-button {
+      background: none;
+      border: none;
+      color: #999;
+      margin-left: 1rem;
+      font-size: 0.95rem;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .cancel-button:hover {
+      color: #ccc;
+    }
+
     @media (max-width: 480px) {
       body {
         padding: 1rem;
       }
+
       .section {
         padding: 1rem;
       }
+
       h1 {
         font-size: 1.3rem;
       }
+
       .section h2 {
         font-size: 1.1rem;
       }
+
       a.button {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
@@ -71,32 +136,58 @@
 </head>
 <body>
 
+  <input type="text" id="search-bar" placeholder="Search tools..." />
+
   <h1>iOS Tools</h1>
   <p>Tools and tweaks to keep your old iPhone alive</p>
 
-  <div class="section">
+  <!-- YOUTUBE ETERNAL -->
+  <div class="section" data-name="youtube eternal">
     <h2>YouTube Eternal</h2>
-    <p>Fixed YouTube for old IOS versions</p>
-    <a class="button" id="yt-download">Download YouTube Eternal</a>
+    <p>Fixed YouTube for old iOS versions</p>
+    <a class="button" id="yt-show-install">Download YouTube Eternal</a>
+    <div class="install-box" id="yt-install-box">
+      <p>This will install a configuration profile to fix YouTube on <span class="version">iOS 9 and later</span>.</p>
+      <button class="confirm-button" id="yt-download">Confirm Install</button>
+      <button class="cancel-button" onclick="document.getElementById('yt-install-box').style.display='none'">Cancel</button>
+    </div>
     <h5>Developed by Zzarkez Dev</h5>
   </div>
 
-  <div class="section">
+  <!-- CHIMERA JAILBREAK -->
+  <div class="section" data-name="chimera jailbreak">
     <h2>Chimera Jailbreak</h2>
-    <p>Install Chimera Jailbreak using the plist method. Fully compatible with iOS 12 – 12.5.7.</p>
-    <a class="button" id="chimera-download">Install Chimera Jailbreak</a>
+    <p>Install Chimera Jailbreak using the plist method. Fully compatible with <span class="version">iOS 12 – 12.5.7</span>.</p>
+    <a class="button" id="chimera-show-install">Install Chimera Jailbreak</a>
+    <div class="install-box" id="chimera-install-box">
+      <p>This will begin installing Chimera Jailbreak on your device. Compatible with <span class="version">iOS 12 – 12.5.7</span>.</p>
+      <button class="confirm-button" id="chimera-download">Confirm Install</button>
+      <button class="cancel-button" onclick="document.getElementById('chimera-install-box').style.display='none'">Cancel</button>
+    </div>
     <h5>Developed by Zzarkez Dev</h5>
   </div>
 
+  <div class="section" data-name="coming soon">
+    <h2>Coming soon</h2>
+  <p>coming soon new tweaks</p>
+  </div>
   <script>
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 
-    document.getElementById("yt-download").addEventListener("click", function () {
+    // Show install boxes
+    document.getElementById("yt-show-install").addEventListener("click", () => {
+      document.getElementById("yt-install-box").style.display = "block";
+    });
+
+    document.getElementById("chimera-show-install").addEventListener("click", () => {
+      document.getElementById("chimera-install-box").style.display = "block";
+    });
+
+    // Install buttons
+    document.getElementById("yt-download").addEventListener("click", () => {
       if (isIOS) {
-        // iOS: abre directamente el perfil
         window.location.href = "https://github.com/ZzarkezDev/Ios-Tools/raw/refs/heads/main/YouTube-Eternal.mobileconfig";
       } else {
-        // PC: descarga el archivo
         const link = document.createElement("a");
         link.href = "https://github.com/ZzarkezDev/Ios-Tools/blob/main/YouTube-Eternal.mobileconfig";
         link.download = "YouTube-Eternal.mobileconfig";
@@ -104,19 +195,35 @@
       }
     });
 
-    document.getElementById("chimera-download").addEventListener("click", function () {
+    document.getElementById("chimera-download").addEventListener("click", () => {
       if (isIOS) {
-        // iOS: itms-services para instalar
         window.location.href = "itms-services://?action=download-manifest&url=https://github.com/ZzarkezDev/Ios-Tools/releases/download/jailbrea/chimera.plist";
       } else {
-        // PC: descarga el IPA
         const link = document.createElement("a");
         link.href = "https://github.com/ZzarkezDev/Ios-Tools/releases/download/jailbrea/chimera.ipa";
         link.download = "chimera.ipa";
         link.click();
       }
     });
+
+    // Search filter
+    const searchBar = document.getElementById('search-bar');
+    const sections = document.querySelectorAll('.section');
+
+    searchBar.addEventListener('input', () => {
+      const query = searchBar.value.toLowerCase();
+
+      sections.forEach(section => {
+        const name = section.getAttribute('data-name');
+        if (name.includes(query)) {
+          section.style.display = 'block';
+        } else {
+          section.style.display = 'none';
+        }
+      });
+    });
   </script>
 
 </body>
 </html>
+
