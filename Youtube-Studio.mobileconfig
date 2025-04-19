@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+ "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>PayloadContent</key>
+  <array>
+    <dict>
+      <key>FullScreen</key>
+      <true/>
+      <key>Icon</key>
+      <data>
+        <!-- Puedes poner aquí el ícono base64 de YouTube Studio si tienes uno -->
+      </data>
+      <key>Label</key>
+      <string>YouTube Studio</string>
+      <key>PayloadDescription</key>
+      <string>Quick access to YouTube Studio</string>
+      <key>PayloadDisplayName</key>
+      <string>YouTube Studio WebClip</string>
+      <key>PayloadIdentifier</key>
+      <string>com.zzarkez.studio12</string>
+      <key>PayloadOrganization</key>
+      <string>Zzarkez Dev</string>
+      <key>PayloadType</key>
+      <string>com.apple.webClip.managed</string>
+      <key>PayloadUUID</key>
+      <string>88E7FCB4-AD1E-4F61-ABCD-STUDIO123456</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>URL</key>
+      <string>https://studio.youtube.com</string>
+      <key>IsRemovable</key>
+      <true/>
+      <key>Precomposed</key>
+      <true/>
+    </dict>
+  </array>
+  <key>PayloadDisplayName</key>
+  <string>YouTube Studio</string>
+  <key>PayloadIdentifier</key>
+  <string>com.zzarkez.studio12.config</string>
+  <key>PayloadOrganization</key>
+  <string>Zzarkez Dev</string>
+  <key>PayloadRemovalDisallowed</key>
+  <false/>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadUUID</key>
+  <string>1712FE0E-ADE8-44C5-ABCD-SETUP123456</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+</dict>
+</plist>
