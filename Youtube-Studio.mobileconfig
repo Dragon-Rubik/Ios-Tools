@@ -46,6 +46,20 @@
 			<true/>
 		</dict>
 	</array>
+	<key>PayloadDisplayName</key>
+	<string>YouTube Studio</string>
+	<key>PayloadIdentifier</key>
+	<string>com.zzarkez.youtube12.config</string>
+	<key>PayloadOrganization</key>
+	<string>Zzarkez Dev</string>
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>5B849A12-B67C-4C63-B6A1-F42F8A6DABCD</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
 </dict>
 </plist>
 
