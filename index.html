@@ -162,19 +162,6 @@
     <h5>Developed by Zzarkez Dev</h5>
   </div>
 
-  <!-- YouTube Studio -->
-  <div class="section" data-name="youtube studio">
-    <h2>YouTube Studio</h2>
-    <p>Quick access to YouTube Studio from your home screen</p>
-    <a class="button" id="ytstudio-show-install">Download YouTube Studio</a>
-    <div class="install-box" id="ytstudio-install-box">
-      <p>This will install a configuration profile to create a shortcut to <span class="version">YouTube Studio</span>.</p>
-      <button class="confirm-button" id="ytstudio-download">Confirm Install</button>
-      <button class="cancel-button" onclick="document.getElementById('ytstudio-install-box').style.display='none'">Cancel</button>
-    </div>
-    <h5>Developed by Zzarkez Dev</h5>
-  </div>
-
   <!-- Chimera Jailbreak -->
   <div class="section" data-name="chimera jailbreak">
     <h2>Chimera Jailbreak</h2>
@@ -218,17 +205,6 @@
         const link = document.createElement("a");
         link.href = "https://github.com/ZzarkezDev/Ios-Tools/blob/main/YouTube-Eternal.mobileconfig";
         link.download = "YouTube-Eternal.mobileconfig";
-        link.click();
-      }
-    });
-
-    document.getElementById("ytstudio-download").addEventListener("click", () => {
-      if (isIOS) {
-        window.location.href = "https://github.com/ZzarkezDev/Ios-Tools/raw/refs/heads/main/Youtube-Studio.mobileconfig";
-      } else {
-        const link = document.createElement("a");
-        link.href = "https://github.com/ZzarkezDev/Ios-Tools/raw/refs/heads/main/Youtube-Studio.mobileconfig";
-        link.download = "Youtube-Studio.mobileconfig";
         link.click();
       }
     });
