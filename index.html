@@ -162,19 +162,6 @@
     <h5>Developed by Zzarkez Dev</h5>
   </div>
 
-  <!-- Chimera Jailbreak -->
-  <div class="section" data-name="chimera jailbreak">
-    <h2>Chimera Jailbreak</h2>
-    <p>Install Chimera Jailbreak using the plist method. Fully compatible with <span class="version">iOS 12 – 12.5.7</span>.</p>
-    <a class="button" id="chimera-show-install">Install Chimera Jailbreak</a>
-    <div class="install-box" id="chimera-install-box">
-      <p>This will begin installing Chimera Jailbreak on your device. Compatible with <span class="version">iOS 12 – 12.5.7</span>.</p>
-      <button class="confirm-button" id="chimera-download">Confirm Install</button>
-      <button class="cancel-button" onclick="document.getElementById('chimera-install-box').style.display='none'">Cancel</button>
-    </div>
-    <h5>Developed by Zzarkez Dev</h5>
-  </div>
-
   <!-- Coming Soon -->
   <div class="section" data-name="coming soon">
     <h2>Coming soon</h2>
@@ -205,17 +192,6 @@
         const link = document.createElement("a");
         link.href = "https://github.com/ZzarkezDev/Ios-Tools/blob/main/YouTube-Eternal.mobileconfig";
         link.download = "YouTube-Eternal.mobileconfig";
-        link.click();
-      }
-    });
-
-    document.getElementById("chimera-download").addEventListener("click", () => {
-      if (isIOS) {
-        window.location.href = "itms-services://?action=download-manifest&url=https://github.com/ZzarkezDev/Ios-Tools/releases/download/jailbrea/chimera.plist";
-      } else {
-        const link = document.createElement("a");
-        link.href = "https://github.com/ZzarkezDev/Ios-Tools/releases/download/jailbrea/chimera.ipa";
-        link.download = "chimera.ipa";
         link.click();
       }
     });
