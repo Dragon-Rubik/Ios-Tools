@@ -14,8 +14,8 @@
     }
 
     #search-bar {
-      width: 100%;
-      max-width: 500px;
+      width: 90%;
+      max-width: 400px;
       padding: 0.6rem 1rem;
       margin: 0 auto 1.5rem auto;
       border: none;
@@ -26,6 +26,7 @@
       outline: none;
       box-shadow: 0 0 5px #00000088;
       display: block;
+      text-align: center;
     }
 
     #search-bar::placeholder {
@@ -131,6 +132,12 @@
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
       }
+
+      #search-bar {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.8rem;
+        max-width: 300px;
+      }
     }
   </style>
 </head>
@@ -141,7 +148,7 @@
   <h1>iOS Tools</h1>
   <p>Tools and tweaks to keep your old iPhone alive</p>
 
-  <!-- YOUTUBE ETERNAL -->
+  <!-- YouTube Eternal -->
   <div class="section" data-name="youtube eternal">
     <h2>YouTube Eternal</h2>
     <p>Fixed YouTube for old iOS versions</p>
@@ -154,7 +161,20 @@
     <h5>Developed by Zzarkez Dev</h5>
   </div>
 
-  <!-- CHIMERA JAILBREAK -->
+  <!-- YouTube Studio -->
+  <div class="section" data-name="youtube studio">
+    <h2>YouTube Studio</h2>
+    <p>Quick access to YouTube Studio from your home screen</p>
+    <a class="button" id="ytstudio-show-install">Download YouTube Studio</a>
+    <div class="install-box" id="ytstudio-install-box">
+      <p>This will install a configuration profile to create a shortcut to <span class="version">YouTube Studio</span>.</p>
+      <button class="confirm-button" id="ytstudio-download">Confirm Install</button>
+      <button class="cancel-button" onclick="document.getElementById('ytstudio-install-box').style.display='none'">Cancel</button>
+    </div>
+    <h5>Developed by Zzarkez Dev</h5>
+  </div>
+
+  <!-- Chimera Jailbreak -->
   <div class="section" data-name="chimera jailbreak">
     <h2>Chimera Jailbreak</h2>
     <p>Install Chimera Jailbreak using the plist method. Fully compatible with <span class="version">iOS 12 – 12.5.7</span>.</p>
@@ -167,10 +187,12 @@
     <h5>Developed by Zzarkez Dev</h5>
   </div>
 
+  <!-- Coming Soon -->
   <div class="section" data-name="coming soon">
     <h2>Coming soon</h2>
-  <p>coming soon new tweaks</p>
+    <p>coming soon new tweaks</p>
   </div>
+
   <script>
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 
@@ -179,11 +201,15 @@
       document.getElementById("yt-install-box").style.display = "block";
     });
 
+    document.getElementById("ytstudio-show-install").addEventListener("click", () => {
+      document.getElementById("ytstudio-install-box").style.display = "block";
+    });
+
     document.getElementById("chimera-show-install").addEventListener("click", () => {
       document.getElementById("chimera-install-box").style.display = "block";
     });
 
-    // Install buttons
+    // Download buttons
     document.getElementById("yt-download").addEventListener("click", () => {
       if (isIOS) {
         window.location.href = "https://github.com/ZzarkezDev/Ios-Tools/raw/refs/heads/main/YouTube-Eternal.mobileconfig";
@@ -191,6 +217,17 @@
         const link = document.createElement("a");
         link.href = "https://github.com/ZzarkezDev/Ios-Tools/blob/main/YouTube-Eternal.mobileconfig";
         link.download = "YouTube-Eternal.mobileconfig";
+        link.click();
+      }
+    });
+
+    document.getElementById("ytstudio-download").addEventListener("click", () => {
+      if (isIOS) {
+        window.location.href = "https://github.com/ZzarkezDev/Ios-Tools/raw/refs/heads/main/Youtube-Studio.mobileconfig";
+      } else {
+        const link = document.createElement("a");
+        link.href = "https://github.com/ZzarkezDev/Ios-Tools/blob/main/Youtube-Studio.mobileconfig";
+        link.download = "Youtube-Studio.mobileconfig";
         link.click();
       }
     });
@@ -212,18 +249,11 @@
 
     searchBar.addEventListener('input', () => {
       const query = searchBar.value.toLowerCase();
-
       sections.forEach(section => {
         const name = section.getAttribute('data-name');
-        if (name.includes(query)) {
-          section.style.display = 'block';
-        } else {
-          section.style.display = 'none';
-        }
+        section.style.display = name.includes(query) ? 'block' : 'none';
       });
     });
   </script>
-
 </body>
 </html>
-
