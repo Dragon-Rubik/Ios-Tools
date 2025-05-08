@@ -1,212 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>iOS Tools</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="website icon" type="png" href="logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>El Ave Fénix</title>
   <style>
     body {
-      background-color: #1b1b1b;
-      color: #fff;
-      font-family: sans-serif;
-      padding: 2rem;
-      text-align: center;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #1a0000, #330000);
+      color: #fff5e6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 20px;
+      overflow-x: hidden;
     }
 
-    #search-bar {
-      width: 90%;
-      max-width: 400px;
-      padding: 0.6rem 1rem;
-      margin: 0 auto 1.5rem auto;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      background-color: #2c2c2c;
-      color: #fff;
-      outline: none;
-      box-shadow: 0 0 5px #00000088;
-      display: block;
+    header {
       text-align: center;
-    }
-
-    #search-bar::placeholder {
-      color: #aaa;
+      margin-top: 30px;
     }
 
     h1 {
-      color: #ffffff;
-      font-size: 2rem;
+      font-size: 3em;
+      color: #ff6600;
+      text-shadow: 0 0 10px #ff3300;
+      animation: fadeIn 2s ease-in-out;
     }
 
-    .section {
-      margin: 2rem auto;
-      padding: 1.2rem;
-      border: 1px solid #444;
-      border-radius: 10px;
-      background-color: #1c1c1c;
-      max-width: 500px;
-      position: relative;
+    nav {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
     }
 
-    .section h2 {
-      color: #ffffff;
-      font-size: 1.3rem;
-    }
-
-    .section p {
-      font-size: 0.95rem;
-      color: #39be70;
-    }
-
-    a.button, button.confirm-button {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      background-color: rgb(41, 67, 219);
-      color: #000;
+    nav a {
+      background-color: #ff6600;
+      color: white;
+      font-size: 1.2em;
+      padding: 15px 30px;
+      margin: 0 10px;
+      border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
+      transition: background-color 0.3s;
+      box-shadow: 0 0 10px rgba(255, 105, 0, 0.6);
+    }
+
+    nav a:hover {
+      background-color: #ffaa00;
+      box-shadow: 0 0 15px rgba(255, 165, 0, 0.8);
+    }
+
+    section {
+      max-width: 800px;
+      margin-top: 40px;
+      opacity: 0;
+      animation: fadeInText 3s forwards;
+    }
+
+    section h2 {
+      color: #ffaa00;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    p, .dato {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+
+    p.intro {
+      font-size: 1.2em;
+      max-width: 700px;
+      margin: 20px auto;
+      line-height: 1.6;
+      text-align: center;
+      opacity: 0;
+      animation: fadeInText 3s forwards;
+      animation-delay: 1s;
+    }
+
+    .datos {
+      background-color: rgba(45, 10, 10, 0.9);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 0 20px #ff4500aa;
+      margin-top: 40px;
+      opacity: 0;
+      animation: fadeInText 3s forwards;
+      animation-delay: 3s;
+    }
+
+    .dato {
+      background-color: #3d1a1a;
+      padding: 15px;
+      margin: 10px 0;
+      border-left: 5px solid #ff6600;
       border-radius: 8px;
-      transition: background-color 0.2s;
-      border: none;
-      cursor: pointer;
+      opacity: 0;
+      animation: fadeInText 2s forwards;
     }
 
-    a.button:hover, button.confirm-button:hover {
-      background-color: rgb(41, 67, 219);
-    }
+    .dato:nth-child(1) { animation-delay: 4s; }
+    .dato:nth-child(2) { animation-delay: 4.5s; }
+    .dato:nth-child(3) { animation-delay: 5s; }
+    .dato:nth-child(4) { animation-delay: 5.5s; }
+    .dato:nth-child(5) { animation-delay: 6s; }
 
-    .install-box {
-      background-color: #2a2a2a;
-      border: 1px solid #555;
+    .phoenix-img {
+      width: 80%;
+      max-width: 600px;
       border-radius: 10px;
-      padding: 1rem;
-      margin-top: 1rem;
-      display: none;
-      color: #fff;
+      margin-top: 20px;
+      animation: fadeInImage 3s ease-in-out;
+      opacity: 0;
+      animation-delay: 2s;
     }
 
-    .install-box p {
-      color: #ccc;
-      font-size: 0.95rem;
-      margin-bottom: 0.8rem;
+    footer {
+      margin-top: 50px;
+      font-size: 1em;
+      color: #aaa;
+      text-align: center;
+      opacity: 0;
+      animation: fadeInText 3s forwards;
+      animation-delay: 7s;
     }
 
-    .version {
-      color: #ff4c4c;
-      font-weight: bold;
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-50px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
-    .cancel-button {
-      background: none;
-      border: none;
-      color: #999;
-      margin-left: 1rem;
-      font-size: 0.95rem;
-      cursor: pointer;
-      text-decoration: underline;
+    @keyframes fadeInText {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
     }
 
-    .cancel-button:hover {
-      color: #ccc;
+    @keyframes fadeInImage {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
     }
 
-    @media (max-width: 480px) {
-      body {
-        padding: 1rem;
-      }
-
-      .section {
-        padding: 1rem;
-      }
-
+    @media (max-width: 600px) {
       h1 {
-        font-size: 1.3rem;
+        font-size: 2.5em;
       }
 
-      .section h2 {
-        font-size: 1.1rem;
+      .datos {
+        padding: 20px;
       }
+    }
 
-      a.button {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-      }
-
-      #search-bar {
-        font-size: 0.9rem;
-        padding: 0.5rem 0.8rem;
-        max-width: 300px;
-      }
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>El Ave Fénix</h1>
+    <nav>
+      <a href="#historia">Historia</a>
+      <a href="#temperamento">Temperamento</a>
+      <a href="#datos">Datos Curiosos</a>
+    </nav>
+    <p class="intro">
+      El ave Fénix es una criatura mitológica famosa por renacer de sus propias cenizas. Representa el poder del cambio, la superación y el renacimiento eterno.
+    </p>
+  </header>
 
-  <input type="text" id="search-bar" placeholder="Search tools..." />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Phoenix_in_flight.svg/1200px-Phoenix_in_flight.svg.png" alt="Ave Fénix" class="phoenix-img">
 
-  <h1>iOS Tools</h1>
-  <p>Tools and tweaks to keep your old iPhone alive</p>
+  <section id="historia">
+    <h2>Historia del Ave Fénix</h2>
+    <p>
+      El ave Fénix es una criatura mitológica que, según la leyenda, vive durante siglos antes de morir envuelta en un fuego que ella misma provoca. Cuando su final se acerca, construye un nido con ramas perfumadas y se deja consumir por las llamas. De sus propias cenizas, renace una nueva Fénix, joven y renovada, repitiendo el ciclo eterno de vida, muerte y resurrección. Esta historia ha sido contada desde tiempos antiguos, con origen en la mitología egipcia (el ave Bennu), y más tarde adoptada por los griegos y romanos, quienes la convirtieron en símbolo de inmortalidad, renacimiento y esperanza.
+    </p>
+  </section>
 
-  <!-- YouTube Eternal -->
-  <div class="section" data-name="youtube eternal">
-    <h2>YouTube Eternal</h2>
-    <p>Fixed YouTube for old iOS versions</p>
-    <a class="button" id="yt-show-install">Download YouTube Eternal</a>
-    <div class="install-box" id="yt-install-box">
-      <p>This will install a configuration profile to fix YouTube on <span class="version">iOS 9 and later</span>.</p>
-      <button class="confirm-button" id="yt-download">Confirm Install</button>
-      <button class="cancel-button" onclick="document.getElementById('yt-install-box').style.display='none'">Cancel</button>
-    </div>
-    <h5>Developed by Zzarkez Dev</h5>
-  </div>
+  <section id="temperamento">
+    <h2>Temperamento del Ave Fénix</h2>
+    <p>
+      El ave Fénix tiene un temperamento sereno, sabio y valiente. Afronta el fin con dignidad, sin temor, sabiendo que la muerte es solo un paso hacia el renacimiento. Es solitaria, introspectiva y resiliente, con una fuerza interior inquebrantable y una esperanza constante en la renovación.
+    </p>
+  </section>
 
-  <!-- Coming Soon -->
-  <div class="section" data-name="coming soon">
-    <h2>Coming soon</h2>
-    <p>coming soon new tweaks</p>
-  </div>
+  <section id="datos" class="datos">
+    <h2>5 Datos Curiosos</h2>
+    <div class="dato"><strong>1. Único en su especie:</strong> Solo existe un Fénix a la vez.</div>
+    <div class="dato"><strong>2. Vida extremadamente larga:</strong> Puede vivir entre 500 y 1,400 años antes de renacer.</div>
+    <div class="dato"><strong>3. Símbolo de transformación:</strong> Representa cambio, superación y nuevos comienzos.</div>
+    <div class="dato"><strong>4. Figura religiosa:</strong> Fue adoptado como símbolo de resurrección por el cristianismo antiguo.</div>
+    <div class="dato"><strong>5. Origen egipcio:</strong> Su historia se inspira en el ave Bennu, ligada al dios Ra y al sol.</div>
+  </section>
 
-  <script>
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-
-    // Show install boxes
-    document.getElementById("yt-show-install").addEventListener("click", () => {
-      document.getElementById("yt-install-box").style.display = "block";
-    });
-
-    document.getElementById("ytstudio-show-install").addEventListener("click", () => {
-      document.getElementById("ytstudio-install-box").style.display = "block";
-    });
-
-    document.getElementById("chimera-show-install").addEventListener("click", () => {
-      document.getElementById("chimera-install-box").style.display = "block";
-    });
-
-    // Download buttons
-    document.getElementById("yt-download").addEventListener("click", () => {
-      if (isIOS) {
-        window.location.href = "https://github.com/ZzarkezDev/Ios-Tools/raw/refs/heads/main/YouTube-Eternal.mobileconfig";
-      } else {
-        const link = document.createElement("a");
-        link.href = "https://github.com/ZzarkezDev/Ios-Tools/blob/main/YouTube-Eternal.mobileconfig";
-        link.download = "YouTube-Eternal.mobileconfig";
-        link.click();
-      }
-    });
-
-    // Search filter
-    const searchBar = document.getElementById('search-bar');
-    const sections = document.querySelectorAll('.section');
-
-    searchBar.addEventListener('input', () => {
-      const query = searchBar.value.toLowerCase();
-      sections.forEach(section => {
-        const name = section.getAttribute('data-name');
-        section.style.display = name.includes(query) ? 'block' : 'none';
-      });
-    });
-  </script>
+  <footer>
+    Creado por ZzarkezDev
+  </footer>
 </body>
 </html>
