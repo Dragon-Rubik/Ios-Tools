@@ -13,7 +13,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
       min-height: 100vh;
       padding: 20px;
       overflow-x: hidden;
@@ -22,44 +21,53 @@
     header {
       text-align: center;
       margin-top: 30px;
+      width: 100%;
     }
 
     h1 {
       font-size: 3em;
       color: #ff6600;
       text-shadow: 0 0 10px #ff3300;
-      animation: fadeIn 2s ease-in-out;
     }
 
     nav {
-      margin-top: 20px;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+      max-width: 100%;
     }
 
-    nav a {
+    nav a, nav button {
       background-color: #ff6600;
       color: white;
       font-size: 1.2em;
       padding: 15px 30px;
-      margin: 0 10px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
       transition: background-color 0.3s;
+      border: none;
+      cursor: pointer;
       box-shadow: 0 0 10px rgba(255, 105, 0, 0.6);
     }
 
-    nav a:hover {
+    nav a:hover, nav button:hover {
       background-color: #ffaa00;
-      box-shadow: 0 0 15px rgba(255, 165, 0, 0.8);
+    }
+
+    .intro {
+      font-size: 1.2em;
+      max-width: 700px;
+      margin: 20px auto;
+      line-height: 1.6;
+      text-align: center;
     }
 
     section {
       max-width: 800px;
       margin-top: 40px;
-      opacity: 0;
-      animation: fadeInText 3s forwards;
     }
 
     section h2 {
@@ -68,31 +76,12 @@
       margin-bottom: 20px;
     }
 
-    p, .dato {
-      font-size: 1.2em;
-      line-height: 1.6;
-    }
-
-    p.intro {
-      font-size: 1.2em;
-      max-width: 700px;
-      margin: 20px auto;
-      line-height: 1.6;
-      text-align: center;
-      opacity: 0;
-      animation: fadeInText 3s forwards;
-      animation-delay: 1s;
-    }
-
     .datos {
       background-color: rgba(45, 10, 10, 0.9);
       border-radius: 15px;
       padding: 30px;
       box-shadow: 0 0 20px #ff4500aa;
       margin-top: 40px;
-      opacity: 0;
-      animation: fadeInText 3s forwards;
-      animation-delay: 3s;
     }
 
     .dato {
@@ -101,24 +90,6 @@
       margin: 10px 0;
       border-left: 5px solid #ff6600;
       border-radius: 8px;
-      opacity: 0;
-      animation: fadeInText 2s forwards;
-    }
-
-    .dato:nth-child(1) { animation-delay: 4s; }
-    .dato:nth-child(2) { animation-delay: 4.5s; }
-    .dato:nth-child(3) { animation-delay: 5s; }
-    .dato:nth-child(4) { animation-delay: 5.5s; }
-    .dato:nth-child(5) { animation-delay: 6s; }
-
-    .phoenix-img {
-      width: 80%;
-      max-width: 600px;
-      border-radius: 10px;
-      margin-top: 20px;
-      animation: fadeInImage 3s ease-in-out;
-      opacity: 0;
-      animation-delay: 2s;
     }
 
     footer {
@@ -126,39 +97,17 @@
       font-size: 1em;
       color: #aaa;
       text-align: center;
-      opacity: 0;
-      animation: fadeInText 3s forwards;
-      animation-delay: 7s;
-    }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(-50px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInText {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-
-    @keyframes fadeInImage {
-      0% { opacity: 0; transform: scale(0.8); }
-      100% { opacity: 1; transform: scale(1); }
     }
 
     @media (max-width: 600px) {
       h1 {
-        font-size: 2.5em;
+        font-size: 2.2em;
       }
 
-      .datos {
-        padding: 20px;
+      nav {
+        flex-direction: column;
+        align-items: center;
       }
-    }
-
-    /* Smooth scroll */
-    html {
-      scroll-behavior: smooth;
     }
   </style>
 </head>
@@ -169,39 +118,51 @@
       <a href="#historia">Historia</a>
       <a href="#temperamento">Temperamento</a>
       <a href="#datos">Datos Curiosos</a>
+      <!-- Cambié el <a> a un <button> para que sea un verdadero botón -->
+      <button onclick="descargarPDF()">PDF</button>
     </nav>
     <p class="intro">
       El ave Fénix es una criatura mitológica famosa por renacer de sus propias cenizas. Representa el poder del cambio, la superación y el renacimiento eterno.
     </p>
   </header>
 
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Phoenix_in_flight.svg/1200px-Phoenix_in_flight.svg.png" alt="Ave Fénix" class="phoenix-img">
-
   <section id="historia">
     <h2>Historia del Ave Fénix</h2>
     <p>
-      El ave Fénix es una criatura mitológica que, según la leyenda, vive durante siglos antes de morir envuelta en un fuego que ella misma provoca. Cuando su final se acerca, construye un nido con ramas perfumadas y se deja consumir por las llamas. De sus propias cenizas, renace una nueva Fénix, joven y renovada, repitiendo el ciclo eterno de vida, muerte y resurrección. Esta historia ha sido contada desde tiempos antiguos, con origen en la mitología egipcia (el ave Bennu), y más tarde adoptada por los griegos y romanos, quienes la convirtieron en símbolo de inmortalidad, renacimiento y esperanza.
+      El ave Fénix es una criatura mitológica que, según la leyenda, vive durante siglos antes de morir envuelta en un fuego que ella misma provoca. De sus propias cenizas, renace una nueva Fénix, joven y renovada.
     </p>
   </section>
 
   <section id="temperamento">
     <h2>Temperamento del Ave Fénix</h2>
     <p>
-      El ave Fénix tiene un temperamento sereno, sabio y valiente. Afronta el fin con dignidad, sin temor, sabiendo que la muerte es solo un paso hacia el renacimiento. Es solitaria, introspectiva y resiliente, con una fuerza interior inquebrantable y una esperanza constante en la renovación.
+      El ave Fénix tiene un temperamento sereno, sabio y valiente. Es solitaria, introspectiva y resiliente.
     </p>
   </section>
 
   <section id="datos" class="datos">
     <h2>5 Datos Curiosos</h2>
-    <div class="dato"><strong>1. Único en su especie:</strong> Solo existe un Fénix a la vez.</div>
-    <div class="dato"><strong>2. Vida extremadamente larga:</strong> Puede vivir entre 500 y 1,400 años antes de renacer.</div>
-    <div class="dato"><strong>3. Símbolo de transformación:</strong> Representa cambio, superación y nuevos comienzos.</div>
-    <div class="dato"><strong>4. Figura religiosa:</strong> Fue adoptado como símbolo de resurrección por el cristianismo antiguo.</div>
-    <div class="dato"><strong>5. Origen egipcio:</strong> Su historia se inspira en el ave Bennu, ligada al dios Ra y al sol.</div>
+    <div class="dato"><strong>1. Único:</strong> Solo existe un Fénix a la vez.</div>
+    <div class="dato"><strong>2. Longevidad:</strong> Vive cientos de años.</div>
+    <div class="dato"><strong>3. Renacimiento:</strong> Resurge de sus propias cenizas.</div>
+    <div class="dato"><strong>4. Religioso:</strong> Símbolo de resurrección cristiana.</div>
+    <div class="dato"><strong>5. Egipcio:</strong> Inspirado en el ave Bennu.</div>
   </section>
 
   <footer>
     Creado por ZzarkezDev
   </footer>
+
+  <script>
+    function descargarPDF() {
+      const link = document.createElement('a');
+      link.href = 'https://github.com/ZzarkezDev/Phoenix-/raw/main/Phoenix.pdf';
+      link.download = 'Phoenix.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
 </body>
 </html>
+
