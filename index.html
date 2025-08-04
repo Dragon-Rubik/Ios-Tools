@@ -2,167 +2,106 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>El Ave Fénix</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noticia Escolar</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, #1a0000, #330000);
-      color: #fff5e6;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-      overflow-x: hidden;
+      background: #f5f7fa;
+      color: #333;
     }
 
-    header {
-      text-align: center;
-      margin-top: 30px;
-      width: 100%;
-    }
-
-    h1 {
-      font-size: 3em;
-      color: #ff6600;
-      text-shadow: 0 0 10px #ff3300;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-      max-width: 100%;
-    }
-
-    nav a, nav button {
-      background-color: #ff6600;
-      color: white;
-      font-size: 1.2em;
-      padding: 15px 30px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 0 10px rgba(255, 105, 0, 0.6);
-    }
-
-    nav a:hover, nav button:hover {
-      background-color: #ffaa00;
-    }
-
-    .intro {
-      font-size: 1.2em;
-      max-width: 700px;
-      margin: 20px auto;
-      line-height: 1.6;
-      text-align: center;
-    }
-
-    section {
+    .container {
       max-width: 800px;
-      margin-top: 40px;
-    }
-
-    section h2 {
-      color: #ffaa00;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .datos {
-      background-color: rgba(45, 10, 10, 0.9);
-      border-radius: 15px;
-      padding: 30px;
-      box-shadow: 0 0 20px #ff4500aa;
-      margin-top: 40px;
-    }
-
-    .dato {
-      background-color: #3d1a1a;
-      padding: 15px;
-      margin: 10px 0;
-      border-left: 5px solid #ff6600;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       border-radius: 8px;
     }
 
-    footer {
-      margin-top: 50px;
-      font-size: 1em;
-      color: #aaa;
-      text-align: center;
+    h1 {
+      color: #b91c1c;
+      font-size: 2em;
+      margin-bottom: 10px;
+      border-bottom: 3px solid #b91c1c;
+      padding-bottom: 5px;
     }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.2em;
-      }
+    h2 {
+      color: #444;
+      font-size: 1.2em;
+      margin-top: 0;
+      font-weight: 400;
+    }
 
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
+    .date {
+      color: #666;
+      font-size: 0.9em;
+      margin-bottom: 15px;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .highlight {
+      background: #fef3c7;
+      padding: 4px 6px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 0.85em;
+      color: #777;
+      text-align: center;
+      border-top: 1px solid #eee;
+      padding-top: 10px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>El Ave Fénix</h1>
-    <nav>
-      <a href="#historia">Historia</a>
-      <a href="#temperamento">Temperamento</a>
-      <a href="#datos">Datos Curiosos</a>
-      <!-- Cambié el <a> a un <button> para que sea un verdadero botón -->
-      <button onclick="descargarPDF()">PDF</button>
-    </nav>
-    <p class="intro">
-      El ave Fénix es una criatura mitológica famosa por renacer de sus propias cenizas. Representa el poder del cambio, la superación y el renacimiento eterno.
-    </p>
-  </header>
 
-  <section id="historia">
-    <h2>Historia del Ave Fénix</h2>
+  <div class="container">
+    <h1>Colegio prohíbe negocios no oficiales en los pasillos</h1>
+    <h2>La medida busca mantener el orden y la convivencia dentro de la institución</h2>
+    <div class="date">Publicado: 4 de agosto de 2025</div>
+
     <p>
-      El ave Fénix es una criatura mitológica que, según la leyenda, vive durante siglos antes de morir envuelta en un fuego que ella misma provoca. De sus propias cenizas, renace una nueva Fénix, joven y renovada.
+      En los últimos días, varios estudiantes fueron sorprendidos realizando ventas de dulces, esferos, 
+      lápices e incluso cartulinas dentro de los pasillos del Colegio Santa Isabel de Hungría.
     </p>
-  </section>
 
-  <section id="temperamento">
-    <h2>Temperamento del Ave Fénix</h2>
     <p>
-      El ave Fénix tiene un temperamento sereno, sabio y valiente. Es solitaria, introspectiva y resiliente.
+      La Coordinación de Convivencia recordó a toda la comunidad educativa que 
+      <span class="highlight">cualquier actividad económica dentro de la institución está prohibida sin autorización previa</span>. 
+      Esta medida está respaldada en el 
+      <strong>Artículo 73, numeral 6 del Manual de Convivencia</strong>, que clasifica como 
+      <em>falta grave</em> “realizar sin autorización cualquier tipo de actividad económica en beneficio particular 
+      como ventas, rifas o colectas de dinero”.
     </p>
-  </section>
 
-  <section id="datos" class="datos">
-    <h2>5 Datos Curiosos</h2>
-    <div class="dato"><strong>1. Único:</strong> Solo existe un Fénix a la vez.</div>
-    <div class="dato"><strong>2. Longevidad:</strong> Vive cientos de años.</div>
-    <div class="dato"><strong>3. Renacimiento:</strong> Resurge de sus propias cenizas.</div>
-    <div class="dato"><strong>4. Religioso:</strong> Símbolo de resurrección cristiana.</div>
-    <div class="dato"><strong>5. Egipcio:</strong> Inspirado en el ave Bennu.</div>
-  </section>
+    <p>
+      El colegio enfatizó que la norma busca mantener el orden, la seguridad y evitar conflictos entre estudiantes. 
+      Los objetos decomisados solo serán entregados a los padres o acudientes, tal como lo indica el manual.
+    </p>
 
-  <footer>
-    Creado por ZzarkezDev
-  </footer>
+    <p>
+      Finalmente, la institución invitó a los estudiantes a canalizar su creatividad y espíritu emprendedor en 
+      actividades aprobadas por el colegio, como ferias escolares o proyectos académicos que sí cuentan con 
+      aval institucional.
+    </p>
 
-  <script>
-    function descargarPDF() {
-      const link = document.createElement('a');
-      link.href = 'https://github.com/ZzarkezDev/Phoenix-/raw/main/Phoenix.pdf';
-      link.download = 'Phoenix.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
-  </script>
+    <footer>
+      Basado en el Manual de Convivencia Isabelista 2025 - Colegio Santa Isabel de Hungría
+    </footer>
+  </div>
+
 </body>
 </html>
+
 
